@@ -3,292 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Security | Smart Safety Jacket</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <link rel="stylesheet" href="style.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Syne', 'sans-serif'],
-                    },
-                    colors: {
-                        dark: '#050505',
-                        accent: '#3366ff',
-                        secondary: '#06b6d4'
-                    }
-                }
-            }
+    <meta http-equiv="refresh" content="4;url=https://the-joint-thesis.github.io/Apex-Security/index.html">
+    <title>Redirecting...</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.17/index.min.css">
+    <style>
+        :root {
+            --primary: #050505;
+            --accent: #3366ff;
+            --secondary: #06b6d4;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-    </script>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--primary);
+            color: #ffffff;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(51, 102, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            animation: breathe 4s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+        }
+        .redirect-container {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 90%;
+        }
+        .emoji-wrap {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(51, 102, 255, 0.5));
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        .redirect-text {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(90deg, var(--accent), var(--secondary), var(--accent));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s linear infinite;
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        .redirect-subtext {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+        .loader-track {
+            width: 100%;
+            max-width: 300px;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+        }
+        .loader-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 4px;
+            box-shadow: 0 0 10px var(--accent);
+        }
+        .manual-link {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: transparent;
+            border: 1px solid rgba(51, 102, 255, 0.5);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.95rem;
+            backdrop-filter: blur(5px);
+        }
+        .manual-link:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(51, 102, 255, 0.4);
+        }
+    </style>
 </head>
 <body>
-
-    <div id="loader">
-        <div class="text-4xl font-display font-bold mb-4 tracking-wider">Apex Security</div>
-        <div class="w-64 bg-gray-800 h-[2px] rounded-full overflow-hidden">
+    <div class="bg-glow"></div>
+    <div class="redirect-container">
+        <div class="emoji-wrap">🚀</div>
+        <h1 class="redirect-text">Redirecting to New Home</h1>
+        <p class="redirect-subtext">✨ We've upgraded our project! Taking you to the new site in a moment...</p>
+        <div class="loader-track">
             <div class="loader-bar" id="loader-bar"></div>
         </div>
+        <a href="https://the-joint-thesis.github.io/Apex-Security/index.html" class="manual-link">Click here if not redirected</a>
     </div>
-
-    <div id="canvas-container"></div>
-
-    <nav class="fixed top-0 left-0 w-full px-6 py-5 flex justify-between items-center z-50 backdrop-blur-md border-b border-white/5 bg-black/50">
-        <a href="#" class="logo-wrap text-2xl font-display font-bold flex items-center gap-3 text-white no-underline">
-            <i class="fas fa-shield-alt text-accent"></i>
-            Apex Security
-        </a>
+    <script>
+        const NEW_URL = 'https://the-joint-thesis.github.io/Apex-Security/index.html';
+        const redirectDelay = 3500;
+        const loaderBar = document.getElementById('loader-bar');
+        let progress = 0;
         
-        <div class="hidden md:flex space-x-8">
-            <a href="#home" class="text-sm uppercase tracking-widest hover:text-accent transition-colors">Home</a>
-            <a href="#features" class="text-sm uppercase tracking-widest hover:text-accent transition-colors">Features</a>
-            <a href="#specs" class="text-sm uppercase tracking-widest hover:text-accent transition-colors">Tech</a>
-            <a href="#contact" class="text-sm uppercase tracking-widest hover:text-accent transition-colors">Contact</a>
-        </div>
+        const interval = setInterval(() => {
+            progress += (100 / (redirectDelay / 20));
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+            }
+            loaderBar.style.width = `${progress}%`;
+        }, 20);
 
-        <div class="md:hidden menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-
-    <div class="mobile-nav fixed inset-0 bg-dark z-40 flex flex-col justify-center items-center gap-8 md:hidden">
-        <a href="#home" class="text-3xl font-display font-bold hover:text-accent mobile-link">Home</a>
-        <a href="#features" class="text-3xl font-display font-bold hover:text-accent mobile-link">Features</a>
-        <a href="#specs" class="text-3xl font-display font-bold hover:text-accent mobile-link">Technology</a>
-        <a href="#contact" class="text-3xl font-display font-bold hover:text-accent mobile-link">Contact</a>
-    </div>
-
-    <main class="relative z-10">
-        
-        <section id="home" class="min-h-screen flex flex-col justify-center items-center px-6 relative pt-20 overflow-hidden">
-            
-            <div class="marquee-container">
-                <div class="marquee-text">
-                    SAFETY — INNOVATION — PROTECTION — IOT — SAFETY — INNOVATION — PROTECTION — IOT —
-                </div>
-            </div>
-
-            <div class="max-w-4xl w-full relative z-10 text-center md:text-left">
-                <div class="flex flex-wrap gap-3 mb-8 justify-center md:justify-start">
-                    <div class="hero-badge px-4 py-2 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-xs font-bold tracking-wide flex items-center gap-2">
-                        <i class="fas fa-user-circle"></i> RATANDEEP CHOUDHARY
-                    </div>
-                    <div class="hero-badge px-4 py-2 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-xs font-bold tracking-wide flex items-center gap-2">
-                        <i class="fas fa-user-circle"></i> SHREYASH DWIVEDI
-                    </div>
-                    <div class="hero-badge px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-xs font-bold tracking-wide flex items-center gap-2">
-                        <i class="fas fa-bolt"></i> NEXT-GEN TECH
-                    </div>
-                </div>
-
-                <h1 class="text-5xl md:text-8xl font-display font-bold mb-6 leading-none">
-                    Smart Safety <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Jacket</span>
-                </h1>
-                
-                <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto md:mx-0">
-                    Revolutionary wearable technology combining IoT sensors, health monitoring, and real-time hazard detection to protect workers in dangerous environments.
-                </p>
-
-                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                    <a href="#features" class="btn-fill px-8 py-4 bg-accent text-white font-bold rounded-full inline-flex items-center gap-2">
-                        Explore Features <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn-fill px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full inline-flex items-center gap-2 hover:border-accent hover:text-accent">
-                        Get Started
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="image-card-wrap glass-card rounded-2xl h-[450px] cursor-pointer">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80" alt="Tech" class="w-full h-full object-cover opacity-80">
-                        <div class="image-overlay absolute inset-0 flex flex-col justify-end p-8">
-                            <h3 class="text-xl font-bold mb-1">Intelligent Design</h3>
-                            <p class="text-gray-300 text-sm">Sensors strategically placed for coverage.</p>
-                        </div>
-                    </div>
-                    <div class="image-card-wrap glass-card rounded-2xl h-[450px] cursor-pointer md:-mt-12">
-                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="Worker" class="w-full h-full object-cover opacity-80">
-                        <div class="image-overlay absolute inset-0 flex flex-col justify-end p-8">
-                            <h3 class="text-xl font-bold mb-1">Real-time Monitoring</h3>
-                            <p class="text-gray-300 text-sm">Live data transmission to safety systems.</p>
-                        </div>
-                    </div>
-                    <div class="image-card-wrap glass-card rounded-2xl h-[450px] cursor-pointer">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Industry" class="w-full h-full object-cover opacity-80">
-                        <div class="image-overlay absolute inset-0 flex flex-col justify-end p-8">
-                            <h3 class="text-xl font-bold mb-1">Industrial Grade</h3>
-                            <p class="text-gray-300 text-sm">Built for harsh working conditions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="py-24 px-6 relative">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-6xl font-display font-bold mb-6">Core Safety Features</h2>
-                    <p class="text-gray-400 max-w-2xl mx-auto">Comprehensive protection through intelligent monitoring systems designed for the modern industrial workforce.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="glass-card feature-card p-8 rounded-2xl text-center">
-                        <div class="feature-icon text-4xl mb-6 text-white/50 inline-block">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Electric Field Detection</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Custom probes detect live conductors up to 5 meters away, preventing electrical accidents.</p>
-                    </div>
-
-                    <div class="glass-card feature-card p-8 rounded-2xl text-center">
-                        <div class="feature-icon text-4xl mb-6 text-white/50 inline-block">
-                            <i class="fas fa-temperature-high"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Thermal Monitoring</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">IR sensors continuously scan for hot surfaces and overheating equipment.</p>
-                    </div>
-
-                    <div class="glass-card feature-card p-8 rounded-2xl text-center">
-                        <div class="feature-icon text-4xl mb-6 text-white/50 inline-block">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Vital Signs Tracking</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Heart rate and SpO₂ monitoring in wrist cuff ensures worker health is assessed.</p>
-                    </div>
-
-                    <div class="glass-card feature-card p-8 rounded-2xl text-center">
-                        <div class="feature-icon text-4xl mb-6 text-white/50 inline-block">
-                            <i class="fas fa-user-injured"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Fall Detection</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Advanced motion sensors detect falls and automatically alert supervisors.</p>
-                    </div>
-
-                    <div class="glass-card feature-card p-8 rounded-2xl text-center">
-                        <div class="feature-icon text-4xl mb-6 text-white/50 inline-block">
-                            <i class="fas fa-bell"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Multi-Modal Alerts</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Vibration, sound, and visual alerts ensure warnings are noticed instantly.</p>
-                    </div>
-
-                    <div class="glass-card feature-card p-8 rounded-2xl text-center">
-                        <div class="feature-icon text-4xl mb-6 text-white/50 inline-block">
-                            <i class="fas fa-wifi"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">IoT Connectivity</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Seamless integration with existing safety systems through Bluetooth and Wi-Fi.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="specs" class="py-24 px-6 bg-white/5">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-4">Technical Specs</h2>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="glass-card spec-card p-6 rounded-xl">
-                        <div class="text-gray-500 text-xs uppercase tracking-widest mb-2">Processor</div>
-                        <div class="text-xl font-bold text-white">ESP32-S3</div>
-                    </div>
-                    <div class="glass-card spec-card p-6 rounded-xl">
-                        <div class="text-gray-500 text-xs uppercase tracking-widest mb-2">Thermal</div>
-                        <div class="text-xl font-bold text-white">MLX90640</div>
-                    </div>
-                    <div class="glass-card spec-card p-6 rounded-xl">
-                        <div class="text-gray-500 text-xs uppercase tracking-widest mb-2">Health</div>
-                        <div class="text-xl font-bold text-white">MAX30102</div>
-                    </div>
-                    <div class="glass-card spec-card p-6 rounded-xl">
-                        <div class="text-gray-500 text-xs uppercase tracking-widest mb-2">Motion</div>
-                        <div class="text-xl font-bold text-white">MPU9250</div>
-                    </div>
-                    <div class="glass-card spec-card p-6 rounded-xl">
-                        <div class="text-gray-500 text-xs uppercase tracking-widest mb-2">Battery</div>
-                        <div class="text-xl font-bold text-white">18650 Li-ion</div>
-                    </div>
-                    <div class="glass-card spec-card p-6 rounded-xl">
-                        <div class="text-gray-500 text-xs uppercase tracking-widest mb-2">Interface</div>
-                        <div class="text-xl font-bold text-white">USB-C</div>
-                    </div>
-                    <div class="glass-card spec-card p-6 rounded-xl">
-                        <div class="text-gray-500 text-xs uppercase tracking-widest mb-2">Range</div>
-                        <div class="text-xl font-bold text-white">-40° to 85°C</div>
-                    </div>
-                    <div class="glass-card spec-card p-6 rounded-xl">
-                        <div class="text-gray-500 text-xs uppercase tracking-widest mb-2">Feedback</div>
-                        <div class="text-xl font-bold text-white">Haptic + LED</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div class="stat-item">
-                        <div class="stat-number text-5xl md:text-7xl font-bold text-accent mb-2">95%</div>
-                        <p class="text-gray-400 uppercase tracking-widest text-xs">Accident Prevention</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number text-5xl md:text-7xl font-bold text-accent mb-2">24/7</div>
-                        <p class="text-gray-400 uppercase tracking-widest text-xs">Continuous Monitoring</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number text-5xl md:text-7xl font-bold text-accent mb-2">72h</div>
-                        <p class="text-gray-400 uppercase tracking-widest text-xs">Battery Life</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number text-5xl md:text-7xl font-bold text-accent mb-2">0.5s</div>
-                        <p class="text-gray-400 uppercase tracking-widest text-xs">Response Time</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-24 px-6 bg-white/5">
-            <div class="max-w-xl mx-auto text-center">
-            
-            <footer class="text-center mt-20 text-gray-600 text-sm">
-               <div class="w-full text-center my-12">
-    <p class="text-gray-500 text-xs uppercase tracking-widest mb-4">get in touch</p>
-    <a href="mailto:ratandeepkingiafc@gmail.com" class="group inline-flex items-center gap-3 text-2xl md:text-3xl font-display font-bold text-white transition-colors duration-300">
-        <span class="group-hover:text-secondary transition-colors">Empiricist 01</span>
-        <i class="fas fa-arrow-right -rotate-45 text-secondary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 text-xl"></i>
-    </a>
-    <a href="mailto:shreyashdwivedi0@gmail.com" class="group inline-flex items-center gap-3 text-2xl md:text-3xl font-display font-bold text-white transition-colors duration-300">
-        <span class="group-hover:text-secondary transition-colors">Empiricist 02</span>
-        <i class="fas fa-arrow-right -rotate-45 text-secondary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 text-xl"></i>
-    </a>
-</div>
-      </div>
-                <div class="w-full text-center my-12"> &copy; 2026 Apex Security Project. All rights reserved.
-            </footer>
-        </section>
-
-    </main>
-
-    <script src="script.js"></script>
+        setTimeout(() => {
+            window.location.replace(NEW_URL);
+        }, redirectDelay);
+    </script>
 </body>
 </html>
+
